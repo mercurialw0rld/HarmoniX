@@ -141,12 +141,37 @@ body {
 
 .sheet-panel,
 .ai-panel {
-  background: var(--bg-card);
   border: 1px solid var(--border-soft);
   border-radius: 28px;
   padding: 2rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(18px);
+  position: relative;
+  overflow: hidden;
+}
+
+.sheet-panel::before,
+.ai-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg-card);
+}
+
+.sheet-panel::before {
+  background: radial-gradient(circle at top, rgba(41, 96, 148, 0.6), rgba(7, 16, 28, 0.95)),
+    linear-gradient(150deg, rgba(8, 24, 46, 0.95), rgba(4, 12, 23, 0.9));
+}
+
+.ai-panel::before {
+  background: linear-gradient(160deg, rgba(6, 16, 28, 0.95), rgba(3, 8, 15, 0.9));
+}
+
+.sheet-panel > *,
+.ai-panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .sheet-header {
