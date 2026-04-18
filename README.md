@@ -22,7 +22,7 @@
 ## 🧠 How It Works
 
 1.  **Extraction:** The user provides a URL. The backend uses Firecrawl to fetch the raw content of the song.
-2.  **Processing:** Gemini 1.5 Flash processes the text to identify the key, structure, and original chords.
+2.  **Processing:** Gemini 2.5 Flash processes the text to identify the key, structure, and original chords.
 3.  **Enhancement:** Users can request the AI to "Change to Jazz style" or "Simplify chords". The LLM returns a structured musical output.
 4.  **Visualization:** For every chord detected, the system checks for corresponding piano patterns and displays them dynamically to the user.
 
