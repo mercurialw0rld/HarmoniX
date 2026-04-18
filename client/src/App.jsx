@@ -396,7 +396,18 @@ function App() {
             ))}
           </div>
 
-          <div className={`sheet-body ${hasSections ? '' : 'sheet-empty'}`}>
+          <div
+            className={`sheet-body ${hasSections ? '' : 'sheet-empty'} ${searchState === 'loading' ? 'is-loading' : ''}`}
+            aria-busy={searchState === 'loading'}
+          >
+            {searchState === 'loading' && (
+              <div className="scrape-overlay" role="status" aria-live="polite">
+                <p>
+                  <span className="scrape-spinner" aria-hidden="true" />
+                  Scraping, this may take a minute
+                </p>
+              </div>
+            )}
             {hasSections ? (
               displayedSong.sections.map((section, sectionIdx) => (
                 <div className="sheet-section" key={`${section.label}-${sectionIdx}`}>
